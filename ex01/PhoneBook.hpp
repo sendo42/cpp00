@@ -1,13 +1,23 @@
-#ifndef  _PHONEBOOK_HPP_
-#define  _PHONEBOOK_HPP_
+#ifndef  __PHONEBOOK_HPP__
+#define  __PHONEBOOK_HPP__
 
 #include <iostream>
+#include "Contact.hpp"
 
 class PhoneBook 
 {
+    private:
+    	Contact Contacts[8];
+
     public:
-    	Contact Contacts[8];    
+        void AddContact(int count);
+        void SearchContact(int count);
+
 
 };
+
+bool get_input(std::string& input);
+bool CheckInput(std::string);
+int num_input();
 
 #endif

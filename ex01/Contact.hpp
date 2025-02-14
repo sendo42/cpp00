@@ -1,5 +1,5 @@
-#ifndef __CONTACT_HPP_
-#define __CONTACT_HPP_
+#ifndef __CONTACT_HPP__
+#define __CONTACT_HPP__
 
 #include <string>
 #include <iostream>
@@ -7,7 +7,6 @@
 class Contact
 {
     public:
-		void AddContact(std::int8_t count);
 		void SetContact (std::string FirstName, std::string LastName, std::string NickName, std::string PhoneNumber, std::string DarkestSecret);
 		void ShowAllContact();
 		void ShowAllContent(int count);
@@ -31,5 +30,8 @@ class Contact
 
 bool CheckInput(std::string PhoneNumber);
 void PrintHeader();
+void PrintGuide();
+bool get_input(std::string& input);
+
 
 #endif

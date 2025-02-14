@@ -1,39 +1,6 @@
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-
-
-void Contact::AddContact(std::int8_t count)
-{
-    std::string FirstName, LastName, NickName, PhoneNumber, DarkestSecret;
-
-    std::cout << "enter First Name" << std::endl;
-    std::cin >>  FirstName;
-    std::cout << "enter Last Name" << std::endl;		
-    std::cin >>  LastName;
-    std::cout << "enter Nick Name" << std::endl;
-    std::cin >>  NickName;
-    std::cout << "enter Phone Number" << std::endl;
-    std::cin >>  PhoneNumber;
-    while(1)
-    {
-        if(CheckInput(PhoneNumber) == true)
-        {
-            std::cout << "invalid input" << std::endl;
-            std::cin >>  PhoneNumber;
-        }
-        else
-        {
-            break;
-        }
-    }
-    std::cout << "enter your black history" << std::endl;
-    std::cin >>  DarkestSecret;
-    std::cout << "Done" << std::endl;
-
-    this->SetContact(FirstName, LastName, NickName, PhoneNumber, DarkestSecret);
-    count++;
-    count = count % 3;
-}
 
 void Contact::SetContact (std::string FirstName, std::string LastName, std::string NickName, std::string PhoneNumber, std::string DarkestSecret)
 {
@@ -71,15 +38,18 @@ void PrintTenChar(std::string Name)
     }
 }
 
-/*
-ShowでContactインスタンスの配列を全部出力したい。
-しかし呼び方的には一つのオブジェクトしか出せない。
-どうすれば他の配列のメモリを呼べるか
-*/
-
 void PrintHeader()
 {
+    std::cout << "---------------------------------------------" << std::endl;
     std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+
+}
+
+void PrintGuide()
+{
+	std::cout << "type ADD or SEARCH or EXIT" << std::endl;
+	std::cout << "\033[32mphonebook % \033[m";
 }
 
 void Contact::ShowLineContact(int s_count)
@@ -105,7 +75,7 @@ void Contact::ShowAllContent(int count)
     std::cout << "|";
     PrintTenChar(LastName_);
     std::cout << "|";
-    PrintTenChar(NickName_);
+    std::cout << NickName_;
     std::cout << "|" << std::endl;
 }
 
