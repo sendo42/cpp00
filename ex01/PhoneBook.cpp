@@ -7,16 +7,16 @@ void PhoneBook::AddContact(int count)
 
     std::cout << "enter First Name" << std::endl;
     std::cout << ">> ";
-    get_input(FirstName);
+    NoEmptyString(FirstName);
     std::cout << "enter Last Name" << std::endl;		
     std::cout << ">> ";
-    get_input(LastName);
+    NoEmptyString(LastName);
     std::cout << "enter Nick Name" << std::endl;
     std::cout << ">> ";
-    get_input(NickName);
+    NoEmptyString(NickName);
     std::cout << "enter Phone Number" << std::endl;
     std::cout << ">> ";
-    while(get_input(PhoneNumber))
+    while(NoEmptyString(PhoneNumber))
     {
         if(CheckInput(PhoneNumber) == true)
             std::cout << "invalid input" << std::endl;
@@ -26,7 +26,7 @@ void PhoneBook::AddContact(int count)
     }
     std::cout << "enter your black history" << std::endl;
     std::cout << ">> ";
-    get_input(DarkestSecret);
+    NoEmptyString(DarkestSecret);
     std::cout << "Done" << std::endl;
 
     this->Contacts[count].SetContact(FirstName, LastName, NickName, PhoneNumber, DarkestSecret);
@@ -37,7 +37,7 @@ void PhoneBook::SearchContact(int count)
 {
     int c_index;
 
-    for(int i = 0; i < 8; i++)
+    for(int i = 0; i < count; i++)
         this->Contacts[i].ShowLineContact(i);
     std::cout << "---------------------------------------------" << std::endl;
     std::cout << "choose index" << std::endl;
@@ -45,6 +45,7 @@ void PhoneBook::SearchContact(int count)
     if(c_index < count)
         this->Contacts[c_index].ShowAllContent(c_index);
     else
-        std::cout << "no detail or no such index" <<std::endl;
+        std::cout << "no such index" <<std::endl;
 
 }
+

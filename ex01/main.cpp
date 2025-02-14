@@ -14,6 +14,22 @@ bool get_input(std::string& input)
 	return true;
 }
 
+bool NoEmptyString(std::string& input)
+{
+	while(get_input(input) && input.empty())
+	{
+		std::cout << "no empty" << std::endl;
+		std::cout << ">> ";
+		if(std::cin.fail() || std::cin.bad())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max());
+			return false;
+		}
+	}
+	return true;
+}
+
 int num_input()
 {
 	std::string c_index;
@@ -49,6 +65,7 @@ int main()
 		else if(command == "SEARCH")
 		{
 			PrintHeader();
+			list.SearchContact(count);
 
 		}
 		else if(command == "EXIT")

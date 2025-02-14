@@ -67,16 +67,13 @@ void Contact::ShowLineContact(int s_count)
 
 void Contact::ShowAllContent(int count)
 {
-    PrintHeader();
-    std::cout << "|";
-    std::cout << "         " << count;
-    std::cout << "|";
-    PrintTenChar(FirstName_);
-    std::cout << "|";
-    PrintTenChar(LastName_);
-    std::cout << "|";
-    std::cout << NickName_;
-    std::cout << "|" << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+    std::cout << "|        index|   " << count << std::endl;
+    std::cout << "|    FirstName|   " << FirstName_ << std::endl;
+    std::cout << "|     LastName|   " << LastName_ << std::endl;
+    std::cout << "|  PhoneNumber|   " << PhoneNumber_ << std::endl;
+    std::cout << "|darkestsecret|   " << DarkestSecret_<< std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
 }
 
 bool CheckInput(std::string PhoneNumber)

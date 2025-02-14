@@ -5,7 +5,6 @@ SRCS = main.cpp \
 	PhoneBook.cpp \
 	Contact.cpp 
 OBJS = $(SRCS:.cpp=.o)
-# INCDIR = -I./srcs
 
 $(TARGET): $(OBJS)
 	$(CC) $^ -o $@

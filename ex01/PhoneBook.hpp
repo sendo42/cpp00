@@ -13,11 +13,11 @@ class PhoneBook
         void AddContact(int count);
         void SearchContact(int count);
 
-
 };
 
 bool get_input(std::string& input);
 bool CheckInput(std::string);
 int num_input();
+bool NoEmptyString(std::string& input);
 
 #endif
