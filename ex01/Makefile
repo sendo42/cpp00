@@ -10,7 +10,7 @@ $(TARGET): $(OBJS)
 	$(CC) $^ -o $@
 
 $(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) $(INCDIR) -c $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
 
 .PHONY: all clean fclean re
